@@ -1,4 +1,4 @@
-package org.example.sandbox.algorithms;
+package org.example.sandbox.Algorithms;
 
 import java.util.HashMap;
 import java.util.Map;
