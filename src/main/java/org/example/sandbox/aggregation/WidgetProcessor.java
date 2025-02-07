@@ -11,9 +11,7 @@ public class WidgetProcessor {
 
     private List<Widget> widgets;
 
-    WidgetProcessor() {
 
-        // Pure composition
         a = new Widget();
         b = new Widget();
         c = new Widget();
@@ -26,9 +24,6 @@ public class WidgetProcessor {
 
     public void processWidgets() {
         for (Widget widget : widgets) {
-            System.out.println("Processing widget" + widget);
-
         }
     }
 }
-

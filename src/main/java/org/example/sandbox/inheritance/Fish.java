@@ -5,5 +5,4 @@ public class Fish implements Animal {
     public void eat(String food){
 
     }
-
 }
