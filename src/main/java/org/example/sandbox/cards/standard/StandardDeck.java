@@ -2,6 +2,7 @@ package org.example.sandbox.Cards.Standard;
 
 import javax.naming.OperationNotSupportedException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -12,6 +13,10 @@ public class StandardDeck implements Deck {
 
     public StandardDeck() {
         this.cards = newDeck();
+    }
+
+    public List<Card> getDeck() {
+        return this.cards;
     }
 
     private List<Card> newDeck() {
@@ -27,7 +32,6 @@ public class StandardDeck implements Deck {
         return newDeck;
     }
 
-
     @Override
     public void shuffle() {
 
@@ -37,8 +41,13 @@ public class StandardDeck implements Deck {
 
     @Override
     public void cut(int index) {
+        //List<Card> top = new ArrayList<>(this.cards.subList(0, index));
+
+        //List<Card> bottom = new ArrayList<>(this.cards.subList(index, this.cards.size()));
+        //System.out.println(this.cards.get(index));
 
         List<Card> top = this.cards.subList(0, index);
+
         List<Card> bottom = this.cards.subList(index, this.cards.size());
 
         this.cards.clear();
@@ -54,17 +63,22 @@ public class StandardDeck implements Deck {
 
     @Override
     public Card turnOver() {
+        return this.cards.get(0)
         return cards.get(0);
     }
 
     @Override
     public int search(Card card) {
+        return this.cards.indexof(card);
         return cards.indexOf(card);
     }
-
     @Override
-    public void newOrder(Deck cards) {
-        cards = (Deck) newDeck();
+    public void newOrder() {
+        cards = newDeck();
+    }
+
+    public void newOrder(List<Card> cards) {
+        cards = newDeck();
 
     }
 
